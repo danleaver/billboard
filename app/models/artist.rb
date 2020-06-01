@@ -1,4 +1,3 @@
 class Artist < ApplicationRecord
-  belongs_to :chart
-  has_many :songs
+  belongs_to :billboard_chart
 end

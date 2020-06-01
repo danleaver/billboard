@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  album: MyString
-  chart: one
+  genre: MyString
+  billboard_chart: one
 
 two:
   name: MyString
-  album: MyString
-  chart: two
+  genre: MyString
+  billboard_chart: two

@@ -10,34 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_025046) do
+ActiveRecord::Schema.define(version: 2020_06_01_014413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "album"
-    t.bigint "chart_id", null: false
+    t.string "genre"
+    t.bigint "billboard_chart_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chart_id"], name: "index_artists_on_chart_id"
+    t.index ["billboard_chart_id"], name: "index_artists_on_billboard_chart_id"
   end
 
-  create_table "charts", force: :cascade do |t|
+  create_table "billboard_charts", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string "title"
+    t.string "song_title"
+    t.string "album_name"
     t.bigint "artist_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
-  add_foreign_key "artists", "charts"
+  add_foreign_key "artists", "billboard_charts"
   add_foreign_key "songs", "artists"
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChartTest < ActiveSupport::TestCase
+class BillboardChartTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

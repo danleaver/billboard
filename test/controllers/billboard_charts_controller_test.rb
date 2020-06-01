@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class ChartsControllerTest < ActionDispatch::IntegrationTest
+class BillboardChartsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get charts_index_url
+    get billboard_charts_index_url
     assert_response :success
   end
 
   test "should get show" do
-    get charts_show_url
+    get billboard_charts_show_url
     assert_response :success
   end
 
