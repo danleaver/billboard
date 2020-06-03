@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'billboard_charts/index'
-  get 'billboard_charts/show'
-  get 'charts/index'
-  get 'charts/show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'billboard_charts#index'
+
+  resources :billboard_charts do
+    resources :artists
+  end
+
+  delete "/billboard_chart/:id", to: "billboard_charts#destroy", as: "destroy_the_billboard_chart"
+
 end
