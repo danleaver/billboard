@@ -1,8 +1,10 @@
 <h1>Click a Chart to View Content</h1>
 <%= link_to "Create a new Top 100 List", new_billboard_chart_path %>
 <ul>
-  <% @billboardcharts.each do |chart| %>
-    <li><%= link_to chart.name, chart %></li>
+  <% @billboard_charts.each do |chart| %>
+    <%= link_to chart.title, chart %>
+    <%# <%= link_to 'New Chart', new_billboard_chart_path %>
+
     <% end %>
   </ul>
 

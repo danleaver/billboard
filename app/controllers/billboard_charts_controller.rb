@@ -1,5 +1,8 @@
 class BillboardChartsController < ApplicationController
-  before_action :set_billboard_cart, only: [:show, :edit, :destroy, :update]
+
+  before_action :set_billboard_chart, only: [:show, :edit, :destroy, :update]
+  
+
   def index
     @billboard_charts = BillboardChart.all
   end
@@ -15,7 +18,7 @@ class BillboardChartsController < ApplicationController
 
   def create
     @billboard_chart = BillboardChart.new(billboard_charts_params)
-    if billboard_chart.save
+    if @billboard_chart.save
       redirect_to billboard_charts_path
     else
       render :new
@@ -45,7 +48,7 @@ class BillboardChartsController < ApplicationController
   private
 
   def billboard_charts_params
-    params.require(:billboard_charts).permit(:title)
+    params.require(:billboard_chart).permit(:title)
   end
 
   def set_billboard_chart

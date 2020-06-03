@@ -1,8 +1,11 @@
-<h1><%= @billboard_chart.name %>/h1>
+<h1><%= @billboard_chart.title %></h1>
 <hr />
 <p>What would you like to do?</p>
+<%= link_to 'View all Charts', billboard_charts_path %>
+<br />
 <%= link_to 'View Artists', billboard_chart_artists_path(@billboard_chart) %>
 <br />
-<%= link_to 'Edit Chart', edit_billboard_chart_path(billboard_chart) %>
+<%= link_to 'Edit Chart', edit_billboard_chart_path(@billboard_chart) %>
 <br />
 <%= link_to 'Delete Chart', @billboard_chart, method: :delete %>
+
