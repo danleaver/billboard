@@ -48,7 +48,7 @@ class BillboardChartsController < ApplicationController
     params.require(:billboard_charts).permit(:title)
   end
 
-  def set_billboard_cart
+  def set_billboard_chart
     @billboard_chart = BillboardChart.find(params[:id])
   end
 end
