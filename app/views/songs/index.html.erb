@@ -1,0 +1,12 @@
+<h1> Songs </h1>
+<%= link_to "Add New Song", new_artist_song_path %>
+<ul>
+<% @songs.each do |song| %>
+    <%=  p "Title: #{song.song_title} Album: #{song.album_name}" %>
+    <br>
+    
+    <%= link_to 'Delete Song', [@artist, @song], method: :delete  %>
+
+    <% end %>
+  </ul>
+

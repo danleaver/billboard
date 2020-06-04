@@ -37,7 +37,7 @@ class ArtistsController < ApplicationController
 
   def destroy 
     @artist.destroy
-    redirect_to billboard_chart_artist_path(@billboard_chart)
+    redirect_to billboard_chart_path(@billboard_chart)
   end
 
   private
